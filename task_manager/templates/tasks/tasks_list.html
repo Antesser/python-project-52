@@ -16,24 +16,21 @@
                 <div class="row row-cols-1 row-cols-sm-3">
                     <div class="col h-100">
                         <div class="form-group">
-                            <div class="text-center"><label for="{{ filter.form.status.id_for_label }}">{% translate
-                                    "Status" %}</label></div>
+                            <div class="text-center"><label for="{{ filter.form.status.id_for_label }}">{% translate "Status" %}</label></div>
                             <div>{{ filter.form.status }}</div>
                             <div><small class="text-danger">{{ filter.form.status.errors }}</small></div>
                         </div>
                     </div>
                     <div class="col h-100">
                         <div class="form-group">
-                            <div class="text-center"><label for="{{ filter.form.executor.id_for_label }}">{% translate
-                                    "Executor" %}</label></div>
+                            <div class="text-center"><label for="{{ filter.form.executor.id_for_label }}">{% translate "Executor" %}</label></div>
                             <div>{{ filter.form.executor }}</div>
                             <div><small class="text-danger">{{ filter.form.executor.errors }}</small></div>
                         </div>
                     </div>
                     <div class="col h-100">
                         <div class="form-group">
-                            <div class="text-center"><label for="{{ filter.form.labels.id_for_label }}">{% translate
-                                    "Label" %}</label></div>
+                            <div class="text-center"><label for="{{ filter.form.labels.id_for_label }}">{% translate "Label" %}</label></div>
                             <div>{{ filter.form.labels }}</div>
                             <div><small class="text-danger">{{ filter.form.labels.errors }}</small></div>
                         </div>
@@ -44,8 +41,7 @@
                         <div class="form-group mb-2">
                             <div class="ml-3">
                                 {{ filter.form.self_tasks }}
-                                <label for="{{ filter.form.self_tasks.id_for_label }}">{% translate "SelfTasksOnly"
-                                    %}</label>
+                                <label for="{{ filter.form.self_tasks.id_for_label }}">{% translate "SelfTasksOnly" %}</label>
                             </div>
                         </div>
                     </div>
@@ -53,8 +49,8 @@
                 <div class="row">
                     <div class="col d-flex justify-content-center">
                         <input class="btn btn-primary" type="submit" value="{% translate 'ShowFilteredTasks' %}">
-                        <a href="{% url 'tasks_list' %}" class="btn btn-secondary ml-2" role="button">{% translate
-                            "ResetForm" %}</a>
+                        <a href="{% url 'tasks_list' %}" class="btn btn-secondary ml-2" role="button">
+                            {% translate "ResetForm" %}</a>
                     </div>
                 </div>
             </div>

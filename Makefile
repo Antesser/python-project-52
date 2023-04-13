@@ -18,7 +18,7 @@ compilemessages:
 start:
 	poetry run gunicorn --workers=5 task_manager.wsgi	
 
-start-dev:
+dev:
 	poetry run python manage.py runserver
 	
 makerequirements:
