@@ -1,0 +1,73 @@
+<!doctype html>
+{% load bootstrap4 %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+<html lang="ru-ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %}{% translate "HexletTaskManager" %}{% endblock %}</title>
+    {% bootstrap_css %}
+    {% load static %}
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+    <header>
+        <nav class="navbar navbar-expand-md navbar-light bg-light shadow-sm fixed-top">
+            <span class="mr-2"><img src="{% static 'sun-color-icon.svg' %}" height="25" alt=""></span>
+            <a class="navbar-brand" href="{% url 'index' %}">{% translate "TaskManager" %}</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse"
+                data-target="#navbarToggleExternalContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarToggleExternalContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'users_list' %}">{% translate "Users" %}</a>
+                    </li>
+                    {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'statuses_list' %}">{% translate "Statuses" %}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'labels_list' %}">{% translate "Labels" %}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'tasks_list' %}">{% translate "Tasks" %}</a>
+                    </li>
+                    {% endif %}
+                </ul>
+                <ul class="navbar-nav">
+                    {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'logout' %}">{% trans "LogOut" %}</a>
+                    </li>
+                    {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'login' %}">{% translate "LogIn" %}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'create_user' %}">{% translate "Register" %}</a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main class="flex-grow-1">
+        <div class="container-lg my-4 pt-5">
+            {% bootstrap_messages %}
+            {% block content %}{% endblock %}
+        </div>
+    </main>
+    <footer class="footer mt-auto py-3">
+        <div class="container">
+            <div class="text-center"><a href="https://ru.hexlet.io" class="text-secondary">Hexlet</a></div>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% load i18n %}
+
+{% block title %}{% translate "HexletTaskManager" %} | {{ category }} | {{ title_action }}{% endblock %}
+{% block content %}
+<h1 class="my-4">{{ title_action }}</h1>
+<form method="post">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    <input class="btn btn-primary" type="submit" value="{{ button }}">
+</form>
+{% endblock %}

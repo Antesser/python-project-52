@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% load i18n %}
+
+{% block title %}{% translate "HexletTaskManager" %} | {% translate "Tasks" %} | {% translate "TaskShow" %}{% endblock
+%}
+{% block content %}
+<h1 class="my-4">{% translate "TaskShow" %}</h1>
+<div class="card">
+    <div class="card-header bg-secondary text-white">
+        <h2>{{ task.name}} </h2>
+    </div>
+    <div class="card-body bg-light">
+        <p>{{ task.description|linebreaks }}</p>
+        <hr>
+        <div class="container">
+            <div class="row p-1">
+                <div class="col">{% translate "Author" %}</div>
+                <div class="col">{{ task.author }}</div>
+            </div>
+            <div class="row p-1">
+                <div class="col">{% translate "Executor" %}</div>
+                <div class="col">{{ task.executor|default:_("NotAssignedYet") }}</div>
+            </div>
+            <div class="row p-1">
+                <div class="col">{% translate "Status" %}</div>
+                <div class="col">{{ task.status }}</div>
+            </div>
+            <div class="row p-1">
+                <div class="col">{% translate "CreationDate" %}</div>
+                <div class="col">{{ task.date_created }}</div>
+            </div>
+            <br>
+            <div class="row p-1">
+                <div class="col">
+                    <h6>{% translate "Labels" %}:</h6>
+                    <ul>
+                        {% if not task.labels.all%}
+                        <p><i>{% translate "NoLabelsYet" %}</i></p>
+                        {% else %}
+                        {% for label in task.labels.all %}
+                        <li><i>{{ label }}</i></li>
+                        {% endfor %}
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+            <div class="row p-1">
+                <div class="col">
+                    <a href="{% url 'update_task' task.id %}" class="btn btn-primary mr-1" role="button">{% translate
+                        "Update" %}</a>
+                    <a href="{% url 'delete_task' task.id %}" class="btn btn-danger mr-1" role="button">{% translate
+                        "Delete" %}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

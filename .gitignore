@@ -5,3 +5,5 @@
 .env
 .flake8
 .venv
+coverage.xml
+.coverage
