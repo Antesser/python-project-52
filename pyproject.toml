@@ -1,9 +1,10 @@
 [tool.poetry]
 name = "hexlet-code"
 version = "0.1.0"
-description = ""
+description = "My final test project"
 authors = ["Antesser <ahriman.kun@gmail.com>"]
 readme = "README.md"
+repository = "https://github.com/Antesser/python-project-52"
 packages = [{include = "task_manager"}]
 
 [tool.poetry.dependencies]
