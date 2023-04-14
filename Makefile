@@ -24,6 +24,6 @@ dev:
 makerequirements:
 	poetry export --without-hashes --format=requirements.txt > requirements.txt
 	
-coverage:
+test-coverage:
 	poetry run coverage run --source='.' manage.py test
 	poetry run coverage xml
