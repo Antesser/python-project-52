@@ -3,12 +3,11 @@ from django.urls import reverse_lazy
 from django.utils.translation import gettext_lazy as _
 from django.views.generic import CreateView, DeleteView, DetailView, UpdateView
 from django_filters.views import FilterView
+from tasks.filters import TaskFilter
+from tasks.forms import TaskForm
+from tasks.models import Task
 
 from task_manager.mixins import AuthorizationMixin
-
-from .filters import TaskFilter
-from .forms import TaskForm
-from .models import Task
 
 
 class TaskListView(AuthorizationMixin, FilterView):

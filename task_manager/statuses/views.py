@@ -4,11 +4,10 @@ from django.shortcuts import redirect
 from django.urls import reverse_lazy
 from django.utils.translation import gettext_lazy as _
 from django.views.generic import CreateView, DeleteView, ListView, UpdateView
+from statuses.forms import StatusForm
+from statuses.models import Status
 
 from task_manager.mixins import AuthorizationMixin
-
-from .forms import StatusForm
-from .models import Status
 
 
 class StatusListView(AuthorizationMixin, ListView):
