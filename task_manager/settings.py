@@ -1,7 +1,3 @@
-"""
-Django settings for task_manager project.
-"""
-
 import os
 from pathlib import Path
 
