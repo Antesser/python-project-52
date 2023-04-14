@@ -57,6 +57,6 @@ class StatusDeleteView(SuccessMessageMixin, AuthorizationMixin, DeleteView):
         status = Status.objects.get(id=kwargs['pk'])
         if status.task_set.all():
             messages.error(self.request, _("StatusOnTaskDeleteDenial"))
-            return redirect('/statuses/')
+            return redirect('statuses_list')
         else:
             return super().post(self, request, *args, **kwargs)

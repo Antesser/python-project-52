@@ -57,6 +57,6 @@ class LabelDeleteView(SuccessMessageMixin, AuthorizationMixin, DeleteView):
         label = Label.objects.get(id=kwargs['pk'])
         if label.task_set.all():
             messages.error(self.request, _("LabelOnTaskDeleteDenial"))
-            return redirect('/labels/')
+            return redirect('labels_list')
         else:
             return super().post(self, request, *args, **kwargs)
