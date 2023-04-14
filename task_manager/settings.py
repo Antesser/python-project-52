@@ -24,7 +24,6 @@ ALLOWED_HOSTS = [
 ]
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://antesser-python-project-52-production.up.railway.app',
 ]
 
 # Application definition
