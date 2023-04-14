@@ -23,3 +23,9 @@ class UserPermissionMixin(UserPassesTestMixin):
     def handle_no_permission(self):
         messages.error(self.request, self.permission_denial_message)
         return redirect('users_list')
+
+
+class SetAuthorMixin:
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
