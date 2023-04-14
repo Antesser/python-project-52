@@ -5,6 +5,7 @@
 .env
 .flake8
 .venv
+venv
 coverage.xml
 .coverage
 db.sqlite3
