@@ -16,7 +16,7 @@ jobs:
           pip install poetry
           poetry install
       - name: code coverage
-        uses: antesser/codeclimate-action@v3.2.0
+        uses: paambaati/codeclimate-action@v3.2.0
         env:
           SECRET_KEY: ${{ secrets.SECRET_KEY }}
           CC_TEST_REPORTER_ID: adc14dac3ed869d26985d96c84db2b1adfb4839586e104044b1b57644baa8d6c
