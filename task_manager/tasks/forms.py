@@ -3,9 +3,8 @@ from django.utils.translation import gettext_lazy as _
 
 from task_manager.labels.forms import Label
 from task_manager.statuses.forms import Status
+from task_manager.tasks.models import Task
 from task_manager.users.forms import User
-
-from .models import Task
 
 
 class TaskForm(forms.ModelForm):

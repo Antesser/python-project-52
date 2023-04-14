@@ -4,9 +4,9 @@ from django.shortcuts import redirect
 from django.urls import reverse_lazy
 from django.utils.translation import gettext_lazy as _
 from django.views.generic import CreateView, DeleteView, ListView, UpdateView
-from labels.forms import LabelForm
-from labels.models import Label
 
+from task_manager.labels.forms import LabelForm
+from task_manager.labels.models import Label
 from task_manager.mixins import AuthorizationMixin
 
 

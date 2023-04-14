@@ -1,7 +1,7 @@
 from django.test import TestCase
 from django.urls import reverse_lazy
 
-from .models import User
+from task_manager.users.models import User
 
 USER = {
     'username': 'lexion',

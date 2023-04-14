@@ -3,7 +3,7 @@ from django.urls import reverse_lazy
 
 from task_manager.users.models import User
 
-from .models import Task
+from task_manager.tasks.models import Task
 
 USER = {
     'username': 'lexion',
